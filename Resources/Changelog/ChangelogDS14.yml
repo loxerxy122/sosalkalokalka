@@ -2642,3 +2642,10 @@ Entries:
   - type: Fix
     message: В наборе на АМД-76 даются магазины на АМД, а не на СКС (Я забыл их изначально
       туда вписать).
+- id: 259
+  author: CyberBobeks
+  time: '2026-06-05T18:19:52.667698+00:00'
+  pr: 1626
+  changes:
+  - type: Add
+    message: Возможность скрывать aghost'а (новый action).
