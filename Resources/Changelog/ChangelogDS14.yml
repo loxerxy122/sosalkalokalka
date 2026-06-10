@@ -2960,3 +2960,10 @@ Entries:
   changes:
   - type: Add
     message: Меню управления геймрулами для администрации.
+- id: 293
+  author: awkskieru
+  time: '2026-06-10T08:23:49.143269+00:00'
+  pr: 1681
+  changes:
+  - type: Tweak
+    message: Суммарный урон от магнум картечи снижен со 110 до 90.
