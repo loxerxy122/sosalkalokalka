@@ -3033,3 +3033,10 @@ Entries:
   changes:
   - type: Tweak
     message: Теперь вы можете тушить сигареты.
+- id: 301
+  author: CyberBobeks
+  time: '2026-06-11T09:49:11.623090+00:00'
+  pr: 1688
+  changes:
+  - type: Add
+    message: Последняя выбранная карта в автоголосовании не появится в новом пуле.
