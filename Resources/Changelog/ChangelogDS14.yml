@@ -3688,3 +3688,10 @@ Entries:
   changes:
   - type: Remove
     message: Временно удалена карта Paper из пула голосований.
+- id: 366
+  author: CyberBobeks
+  time: '2026-06-21T11:30:11.570737+00:00'
+  pr: 1809
+  changes:
+  - type: Add
+    message: '"Курящий Карп" вновь вернулся в аплинк обычных агентов.'
