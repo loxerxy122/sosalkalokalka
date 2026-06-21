@@ -3695,3 +3695,18 @@ Entries:
   changes:
   - type: Add
     message: '"Курящий Карп" вновь вернулся в аплинк обычных агентов.'
+- id: 367
+  author: CyberBobeks
+  time: '2026-06-21T12:53:11.352444+00:00'
+  pr: 1810
+  changes:
+  - type: Add
+    message: ЦИИ теперь знает все языки.
+  - type: Fix
+    message: Отсутствие голубой рубашки в лодауте Офицера СБ.
+  - type: Fix
+    message: Название гипоспрея Cybersun в аплинке.
+  - type: Fix
+    message: Отображение healthbar'а в Эскадрона Смерти.
+  - type: Fix
+    message: Объявление об уничтожении материнского ядра ксеноборгов.
