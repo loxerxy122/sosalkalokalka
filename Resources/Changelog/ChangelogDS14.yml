@@ -3924,3 +3924,12 @@ Entries:
   - type: Add
     message: КД на смерть в крите пропадает при нахождении в кукле импланта растворителя
       или бомбы
+- id: 391
+  author: RIP6100
+  time: '2026-06-28T14:51:48.471708+00:00'
+  pr: 1852
+  changes:
+  - type: Add
+    message: Мирная фауна на картах Silly и Pearl. By Amaliz
+  - type: Fix
+    message: Баги на картах Gemini, Box, Pearl и Silly. By Amaliz
