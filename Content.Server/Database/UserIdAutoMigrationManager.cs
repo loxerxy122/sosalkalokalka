@@ -217,21 +217,35 @@ public sealed class UserIdAutoMigrationManager
             endpoint = $"{endpoint}{separator}mkUserId={encodedUserId}";
         }
 
-        if (Uri.TryCreate(endpoint, UriKind.Absolute, out var absoluteUri))
+        if (Uri.TryCreate(endpoint, UriKind.Absolute, out var absoluteUri) && IsHttpUri(absoluteUri))
         {
             requestUri = absoluteUri.ToString();
             return true;
         }
 
-        var authServer = _cfg.GetCVar(CVars.AuthServer).Trim();
-        if (!Uri.TryCreate(authServer, UriKind.Absolute, out var baseUri))
+        if (endpoint.Contains(Uri.SchemeDelimiter, StringComparison.Ordinal))
         {
-            _sawmill.Warning("Cannot build user ID migration auth URL because auth.server is not an absolute URL: {AuthServer}", authServer);
+            _sawmill.Warning(
+                "Cannot build user ID migration auth URL because {CVar} uses unsupported URI scheme: {Endpoint}",
+                CCVars.UserIdMigrationAuthEndpoint.Name,
+                endpoint);
+            return false;
+        }
+
+        var authServer = _cfg.GetCVar(CVars.AuthServer).Trim();
+        if (!Uri.TryCreate(authServer, UriKind.Absolute, out var baseUri) || !IsHttpUri(baseUri))
+        {
+            _sawmill.Warning("Cannot build user ID migration auth URL because auth.server is not an absolute HTTP(S) URL: {AuthServer}", authServer);
             return false;
         }
 
         requestUri = new Uri(baseUri, endpoint.TrimStart('/')).ToString();
         return true;
+    }
+
+    private static bool IsHttpUri(Uri uri)
+    {
+        return uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps;
     }
 
     private bool TryFindBlockingOnlineSession(
