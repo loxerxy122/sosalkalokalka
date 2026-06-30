@@ -3997,3 +3997,10 @@ Entries:
     message: машинки на радиоуправлении в консоль заказов сервиса
   - type: Tweak
     message: логика компонента TriggerOnAction
+- id: 397
+  author: smiler009
+  time: '2026-06-30T13:55:13.518588+00:00'
+  pr: 1845
+  changes:
+  - type: Add
+    message: Продажа энергии
